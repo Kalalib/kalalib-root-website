@@ -25,38 +25,50 @@ const services = [
 const portfolio = [
   {
     name: "WellWiseSolutions",
+    logo: "/assets/portfolio/wellwisesolutions_logo.png",
     stack: "Private CRM and workflow systems",
     result: "Built a private CRM to manage customer interactions and data.",
+    tags: ["Healthcare", "CRM", "Workflow Automation", "Private System"],
     href: "https://wellwisesolutions.com",
   },
   {
     name: "Amazing Echo Solutions",
+    logo: "/assets/portfolio/amazing-echo.svg",
     stack: "Business website and digital systems",
     result: "Delivered web presence support for a medical-grade air purifier company in Hong Kong.",
-    href: "https://www.amazingecho.com",
+    tags: ["Website", "B2B"],
+    href: "https://wankunsystem.github.io",
   },
   {
     name: "Jokangel Crystals",
+    logo: "/assets/portfolio/jokangel_crystal_logo.png",
     stack: "Local business web platform",
     result: "Developed a digital storefront foundation for a gemstone and crystal business.",
-    href: "#",
+    tags: ["Website", "E-commerce"],
+    href: "https://lokapakki.wixstudio.com/jokangel-shop",
   },
   {
     name: "Devas",
+    logo: "/assets/portfolio/devas.svg",
     stack: "Minecraft RPG map and datapack systems",
     result: "Designed multiplayer RPG mechanics, custom stats, and content systems.",
+    tags: ["Games", "Minecraft", "RPG", "Multiplayer"],
     href: "https://v1.kapakki.com/devas",
   },
   {
     name: "SpaceTech",
+    logo: "/assets/portfolio/spacetech_logo.png",
     stack: "Minecraft modpack",
     result: "Launched a themed modpack with 1348+ downloads on CurseForge.",
+    tags: ["Games", "Minecraft", "Modpack"],
     href: "https://www.curseforge.com/minecraft/modpacks/spacetech-space-capsule",
   },
   {
     name: "FeastAR",
+    logo: "/assets/portfolio/feastar_logo.png",
     stack: "Augmented reality product concept",
     result: "Built an AR experience for interactive food visualization.",
+    tags: ["AR", "Product Concept"],
     href: "https://feastar.kalalib.com",
   },
 ];
@@ -135,9 +147,29 @@ export default function Home() {
         <div className="grid gap-5 md:grid-cols-2">
           {portfolio.map((item) => (
             <article key={item.name} className="card-surface p-6">
-              <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">{item.stack}</div>
-              <h3 className="text-xl font-semibold text-kala-deep">{item.name}</h3>
+              <div className="mb-4 flex items-start gap-4">
+                <img
+                  src={item.logo}
+                  alt={`${item.name} logo`}
+                  className="h-12 w-12 shrink-0 rounded-xl border border-slate-200 bg-white object-cover"
+                  loading="lazy"
+                />
+                <div>
+                  <div className="text-xs font-semibold uppercase tracking-wider text-slate-500">{item.stack}</div>
+                  <h3 className="mt-1 text-xl font-semibold text-kala-deep">{item.name}</h3>
+                </div>
+              </div>
               <p className="mt-3 text-slate-600">{item.result}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {item.tags.map((tag) => (
+                  <span
+                    key={`${item.name}-${tag}`}
+                    className="rounded-full border border-slate-300 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
               {item.href !== "#" ? (
                 <a
                   href={item.href}

@@ -47,6 +47,14 @@ const portfolio = [
     href: "https://lokapakki.wixstudio.com/jokangel-shop",
   },
   {
+    name: "FeastAR",
+    logo: "/assets/portfolio/feastar_logo.png",
+    stack: "Augmented reality product concept",
+    result: "Built an AR experience for interactive food visualization.",
+    tags: ["AR", "Product Concept"],
+    href: "https://feastar.kalalib.com",
+  },
+  {
     name: "Devas",
     logo: "/assets/portfolio/devas.svg",
     stack: "Minecraft RPG map and datapack systems",
@@ -61,14 +69,6 @@ const portfolio = [
     result: "Launched a themed modpack with 1348+ downloads on CurseForge.",
     tags: ["Games", "Minecraft", "Modpack"],
     href: "https://www.curseforge.com/minecraft/modpacks/spacetech-space-capsule",
-  },
-  {
-    name: "FeastAR",
-    logo: "/assets/portfolio/feastar_logo.png",
-    stack: "Augmented reality product concept",
-    result: "Built an AR experience for interactive food visualization.",
-    tags: ["AR", "Product Concept"],
-    href: "https://feastar.kalalib.com",
   },
 ];
 
@@ -86,7 +86,7 @@ export default function Home() {
             className="max-w-3xl text-4xl font-bold leading-tight text-kala-deep md:text-6xl"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            KALA builds software and creative digital products that move businesses forward.
+            We build digital products that move businesses forward.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
             We are a technology team serving startups and SMEs with practical engineering, clear communication,
@@ -145,7 +145,10 @@ export default function Home() {
         </div>
         <div className="grid gap-5 md:grid-cols-2">
           {portfolio.map((item) => (
-            <article key={item.name} className="card-surface flex h-full flex-col p-6">
+            <article
+              key={item.name}
+              className="card-surface flex h-full flex-col p-6 transition-all duration-300 hover:-translate-y-1 hover:border-fuchsia-200 hover:bg-fuchsia-50/40 hover:shadow-[0_16px_42px_-22px_rgba(192,38,211,0.42)]"
+            >
               <div className="mb-4 flex items-start gap-4">
                 <img
                   src={item.logo}

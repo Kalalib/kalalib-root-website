@@ -12,8 +12,10 @@ const config: Config = {
           bg: "#f6f8fb",
           ink: "#0f172a",
           deep: "#1e293b",
-          accent: "#0d9488",
-          accentSoft: "#99f6e4",
+          accent: "#D67FFF",
+          secondary: "#5EB4FF",
+          accentSoft: "#F3DCFF",
+          secondarySoft: "#DFF0FF",
           warm: "#f59e0b"
         }
       },

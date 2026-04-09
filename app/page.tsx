@@ -73,7 +73,8 @@ const portfolio = [
 ];
 
 export default function Home() {
-  const formAction = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "https://formspree.io/f/your-form-id";
+  const formAction = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "https://formspree.io/f/mjgpddyz";
+  const thanksRedirect = `${process.env.NEXT_PUBLIC_SITE_URL || "https://kalalib.com"}/thanks/`;
 
   return (
     <main>
@@ -217,6 +218,7 @@ export default function Home() {
               aria-label="Contact form"
             >
               <input type="hidden" name="_subject" value="New inquiry from kalalib.com" />
+              <input type="hidden" name="_next" value={thanksRedirect} />
               <input type="text" name="company_website" className="hidden" tabIndex={-1} autoComplete="off" />
               <input
                 required
@@ -244,9 +246,9 @@ export default function Home() {
               >
                 Send message
               </button>
-              <p className="text-xs text-slate-500">
+              {/* <p className="text-xs text-slate-500">
                 Configure NEXT_PUBLIC_FORMSPREE_ENDPOINT to enable submissions.
-              </p>
+              </p> */}
             </form>
           </div>
         </div>

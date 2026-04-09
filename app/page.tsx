@@ -1,0 +1,219 @@
+import Link from "next/link";
+import { IoArrowForward, IoMailOpenOutline, IoRocketOutline, IoSparklesOutline } from "react-icons/io5";
+
+const services = [
+  {
+    title: "Web and Mobile Development",
+    description:
+      "We build reliable web applications and mobile products tailored for startups and SMEs.",
+    icon: IoRocketOutline,
+  },
+  {
+    title: "Custom Software Solutions",
+    description:
+      "From internal CRM tools to workflow automation, we design software around real operations.",
+    icon: IoSparklesOutline,
+  },
+  {
+    title: "Social Workflow Integration",
+    description:
+      "We connect your audience channels with practical workflows, including WhatsApp-based customer flows.",
+    icon: IoMailOpenOutline,
+  },
+];
+
+const portfolio = [
+  {
+    name: "WellWiseSolutions",
+    stack: "Private CRM and workflow systems",
+    result: "Built a private CRM to manage customer interactions and data.",
+    href: "https://wellwisesolutions.com",
+  },
+  {
+    name: "Amazing Echo Solutions",
+    stack: "Business website and digital systems",
+    result: "Delivered web presence support for a medical-grade air purifier company in Hong Kong.",
+    href: "https://www.amazingecho.com",
+  },
+  {
+    name: "Jokangel Crystals",
+    stack: "Local business web platform",
+    result: "Developed a digital storefront foundation for a gemstone and crystal business.",
+    href: "#",
+  },
+  {
+    name: "Devas",
+    stack: "Minecraft RPG map and datapack systems",
+    result: "Designed multiplayer RPG mechanics, custom stats, and content systems.",
+    href: "https://v1.kapakki.com/devas",
+  },
+  {
+    name: "SpaceTech",
+    stack: "Minecraft modpack",
+    result: "Launched a themed modpack with 1348+ downloads on CurseForge.",
+    href: "https://www.curseforge.com/minecraft/modpacks/spacetech-space-capsule",
+  },
+  {
+    name: "FeastAR",
+    stack: "Augmented reality product concept",
+    result: "Built an AR experience for interactive food visualization.",
+    href: "https://feastar.kalalib.com",
+  },
+];
+
+export default function Home() {
+  const formAction = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "https://formspree.io/f/your-form-id";
+
+  return (
+    <main>
+      <section className="section-shell pb-20 pt-16 md:pb-28 md:pt-24">
+        <div className="card-surface animate-rise overflow-hidden p-8 md:p-12">
+          <p className="mb-4 inline-flex rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700">
+            Hong Kong and Global Delivery
+          </p>
+          <h1
+            className="max-w-3xl text-4xl font-bold leading-tight text-kala-deep md:text-6xl"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            KALA builds software and creative digital products that move businesses forward.
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
+            We are a technology team serving startups and SMEs with practical engineering, clear communication,
+            and product-minded execution across web, mobile, and creative platforms.
+          </p>
+          <div className="mt-10 flex flex-wrap gap-3">
+            <a
+              href="#services"
+              className="inline-flex items-center gap-2 rounded-xl bg-kala-accent px-5 py-3 font-semibold text-white transition hover:translate-y-[-1px] hover:bg-teal-700"
+            >
+              Explore Services
+              <IoArrowForward />
+            </a>
+            <Link
+              href="/team"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-5 py-3 font-semibold text-slate-700 transition hover:bg-slate-100"
+            >
+              Meet the Team
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="section-shell pb-20">
+        <div className="mb-8 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">Services</p>
+            <h2 className="mt-2 text-3xl font-bold text-kala-deep" style={{ fontFamily: "var(--font-heading)" }}>
+              What We Build
+            </h2>
+          </div>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-3">
+          {services.map((service) => {
+            const Icon = service.icon;
+            return (
+              <article key={service.title} className="card-surface p-6 transition hover:-translate-y-1">
+                <div className="mb-4 inline-flex rounded-xl bg-teal-50 p-3 text-teal-700">
+                  <Icon size={22} />
+                </div>
+                <h3 className="text-xl font-semibold text-kala-deep">{service.title}</h3>
+                <p className="mt-3 text-slate-600">{service.description}</p>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section id="portfolio" className="section-shell pb-20">
+        <div className="mb-8">
+          <p className="text-xs font-semibold uppercase tracking-wider text-amber-700">Portfolio</p>
+          <h2 className="mt-2 text-3xl font-bold text-kala-deep" style={{ fontFamily: "var(--font-heading)" }}>
+            Selected Work
+          </h2>
+        </div>
+        <div className="grid gap-5 md:grid-cols-2">
+          {portfolio.map((item) => (
+            <article key={item.name} className="card-surface p-6">
+              <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">{item.stack}</div>
+              <h3 className="text-xl font-semibold text-kala-deep">{item.name}</h3>
+              <p className="mt-3 text-slate-600">{item.result}</p>
+              {item.href !== "#" ? (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-700 hover:text-teal-800"
+                >
+                  Visit project
+                  <IoArrowForward />
+                </a>
+              ) : (
+                <span className="mt-4 inline-flex text-sm font-medium text-slate-400">Private client project</span>
+              )}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="contact" className="section-shell pb-24">
+        <div className="card-surface p-8 md:p-10">
+          <div className="grid gap-8 md:grid-cols-[1.1fr_1fr]">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">Contact</p>
+              <h2 className="mt-2 text-3xl font-bold text-kala-deep" style={{ fontFamily: "var(--font-heading)" }}>
+                Let&apos;s discuss your next project
+              </h2>
+              <p className="mt-4 text-slate-600">
+                We usually reply within 1-2 business days. For direct contact, email us at
+                <a className="ml-1 font-semibold text-teal-700 hover:text-teal-800" href="mailto:hello@kalalib.com">
+                  hello@kalalib.com
+                </a>
+                .
+              </p>
+            </div>
+
+            <form
+              method="POST"
+              action={formAction}
+              className="grid gap-3"
+              aria-label="Contact form"
+            >
+              <input type="hidden" name="_subject" value="New inquiry from kalalib.com" />
+              <input type="text" name="company_website" className="hidden" tabIndex={-1} autoComplete="off" />
+              <input
+                required
+                name="name"
+                placeholder="Your name"
+                className="rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-teal-500"
+              />
+              <input
+                required
+                type="email"
+                name="email"
+                placeholder="Email"
+                className="rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-teal-500"
+              />
+              <textarea
+                required
+                name="message"
+                rows={4}
+                placeholder="Tell us what you want to build"
+                className="rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-teal-500"
+              />
+              <button
+                type="submit"
+                className="mt-1 rounded-lg bg-kala-deep px-4 py-3 font-semibold text-white transition hover:bg-slate-800"
+              >
+                Send message
+              </button>
+              <p className="text-xs text-slate-500">
+                Configure NEXT_PUBLIC_FORMSPREE_ENDPOINT to enable submissions.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

@@ -19,11 +19,11 @@ We also develop social media workflows for our clients to help them manage their
 
 
 
-# KALA Studios:
+# KALA Studio:
 We work on creative projects, such as game development and modding. We have developed several projects in the gaming industry, including Minecraft mods and maps, as well as augmented reality applications.
 
 1. Devas:
-A team of ours (KALA Studios) are also working on a Minecraft map called "Devas", which is a multiplayer RPG PVP map, where custom RPG stats and items are implemented using Minecraft datapacks.
+A team of ours (KALA Studio) are also working on a Minecraft map called "Devas", which is a multiplayer RPG PVP map, where custom RPG stats and items are implemented using Minecraft datapacks.
 See more on https://v1.kapakki.com/devas
 
 2. SpaceTech:

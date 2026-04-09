@@ -17,7 +17,7 @@ It should be collapsible on mobile devices, and should include the following lin
     - KALA (Use kalalib_logo.png as the logo) -> ./
 
 2. Right:
-    - KALA Solutions -> https://advisory.kalalib.com
+    - KALA Solutions -> https://solutions.kalalib.com
     - KALA Studio -> https://studio.kalalib.com
     - Team -> /team
     - Contact -> /contact

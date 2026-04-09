@@ -86,10 +86,10 @@ export default function Home() {
             className="max-w-3xl text-4xl font-bold leading-tight text-kala-deep md:text-6xl"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            We build digital products that move businesses forward.
+            KALA - Technology for Startups and SMEs
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
-            We are a technology team serving startups and SMEs with practical engineering, clear communication,
+            We are a team serving startups and SMEs with practical engineering, clear communication,
             and product-minded execution across web, mobile, and creative platforms.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">

@@ -26,15 +26,14 @@ const portfolio = [
   {
     name: "WellWiseSolutions",
     logo: "/assets/portfolio/wellwisesolutions_logo.png",
-    stack: "Private CRM and workflow systems",
+    stack: "Private CRM and Workflow Systems",
     result: "Built a private CRM to manage customer interactions and data.",
-    tags: ["Healthcare", "CRM", "Workflow Automation", "Private System"],
-    href: "https://wellwisesolutions.com",
+    tags: ["Healthcare", "CRM", "Workflow Automation", "Private System"]
   },
   {
     name: "Amazing Echo Solutions",
     logo: "/assets/portfolio/amazing-echo.svg",
-    stack: "Business website and digital systems",
+    stack: "Website Development",
     result: "Delivered web presence support for a medical-grade air purifier company in Hong Kong.",
     tags: ["Website", "B2B"],
     href: "https://wankunsystem.github.io",
@@ -42,7 +41,7 @@ const portfolio = [
   {
     name: "Jokangel Crystals",
     logo: "/assets/portfolio/jokangel_crystal_logo.png",
-    stack: "Local business web platform",
+    stack: "Website Development",
     result: "Developed a digital storefront foundation for a gemstone and crystal business.",
     tags: ["Website", "E-commerce"],
     href: "https://lokapakki.wixstudio.com/jokangel-shop",
@@ -146,7 +145,7 @@ export default function Home() {
         </div>
         <div className="grid gap-5 md:grid-cols-2">
           {portfolio.map((item) => (
-            <article key={item.name} className="card-surface p-6">
+            <article key={item.name} className="card-surface flex h-full flex-col p-6">
               <div className="mb-4 flex items-start gap-4">
                 <img
                   src={item.logo}
@@ -160,29 +159,31 @@ export default function Home() {
                 </div>
               </div>
               <p className="mt-3 text-slate-600">{item.result}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {item.tags.map((tag) => (
-                  <span
-                    key={`${item.name}-${tag}`}
-                    className="rounded-full border border-slate-300 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700"
+              <div className="mt-auto pt-4">
+                <div className="flex flex-wrap gap-2">
+                  {item.tags.map((tag) => (
+                    <span
+                      key={`${item.name}-${tag}`}
+                      className="rounded-full border border-slate-300 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                {item.href && item.href !== "#" ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-700 hover:text-teal-800"
                   >
-                    {tag}
-                  </span>
-                ))}
+                    Visit project
+                    <IoArrowForward />
+                  </a>
+                ) : (
+                  <span className="mt-4 inline-flex text-sm font-medium text-slate-400">Private client project</span>
+                )}
               </div>
-              {item.href !== "#" ? (
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-700 hover:text-teal-800"
-                >
-                  Visit project
-                  <IoArrowForward />
-                </a>
-              ) : (
-                <span className="mt-4 inline-flex text-sm font-medium text-slate-400">Private client project</span>
-              )}
             </article>
           ))}
         </div>

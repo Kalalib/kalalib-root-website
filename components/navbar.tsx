@@ -28,9 +28,9 @@ export function Navbar() {
           <Image
             src="/kalalib_logo.png"
             alt="KALA logo"
-            width={38}
-            height={38}
-            className="rounded-md ring-1 ring-slate-200 transition group-hover:scale-105"
+            width={52}
+            height={52}
+            className="rounded-md transition group-hover:scale-105"
           />
           <span className="text-lg font-semibold tracking-wide text-kala-deep">KALA</span>
         </Link>

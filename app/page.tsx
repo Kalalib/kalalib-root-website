@@ -204,8 +204,8 @@ export default function Home() {
               </h2>
               <p className="mt-4 text-slate-600">
                 We usually reply within 1-2 business days. For direct contact, email us at
-                <a className="ml-1 font-semibold text-fuchsia-700 hover:text-sky-700" href="mailto:hello@kalalib.com">
-                  hello@kalalib.com
+                <a className="ml-1 font-semibold text-fuchsia-700 hover:text-sky-700" href="mailto:contact@kalalib.com">
+                  contact@kalalib.com
                 </a>
                 .
               </p>

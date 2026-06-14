@@ -66,9 +66,17 @@ const portfolio = [
     name: "SpaceTech",
     logo: "/assets/portfolio/spacetech_logo.png",
     stack: "Minecraft modpack",
-    result: "Launched a themed modpack with 1348+ downloads on CurseForge.",
+    result: "Launched a themed modpack with 1929+ downloads on CurseForge.",
     tags: ["Games", "Minecraft", "Modpack"],
     href: "https://www.curseforge.com/minecraft/modpacks/spacetech-space-capsule",
+  },
+  {
+    name: "Advanced Rocketry - Skyblock Addon (Spaceblock)",
+    logo: "/assets/portfolio/advanced_rocketry_skyblock_addon.png",
+    stack: "Minecraft modpack",
+    result: "Launched an addon mod with 448+ downloads on CurseForge for Advanced Rocketry.",
+    tags: ["Games", "Minecraft", "Modpack"],
+    href: "https://www.curseforge.com/minecraft/mc-mods/advanced-rocketry-skyblock-addon-spaceblock",
   },
 ];
 

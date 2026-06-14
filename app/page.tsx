@@ -73,9 +73,9 @@ const portfolio = [
   {
     name: "Advanced Rocketry - Skyblock Addon (Spaceblock)",
     logo: "/assets/portfolio/advanced_rocketry_skyblock_addon.png",
-    stack: "Minecraft modpack",
+    stack: "Minecraft mod",
     result: "Launched an addon mod with 448+ downloads on CurseForge for Advanced Rocketry.",
-    tags: ["Games", "Minecraft", "Modpack"],
+    tags: ["Games", "Minecraft", "Mod"],
     href: "https://www.curseforge.com/minecraft/mc-mods/advanced-rocketry-skyblock-addon-spaceblock",
   },
 ];

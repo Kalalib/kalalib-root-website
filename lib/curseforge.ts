@@ -22,7 +22,6 @@ export async function getCurseForgeDownloadCount(
   url.searchParams.set("slug", slug);
 
   const response = await fetch(url.toString(), {
-    cache: "no-store",
     headers: {
       Accept: "application/json",
       "x-api-key": apiKey,

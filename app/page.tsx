@@ -2,8 +2,6 @@ import Link from "next/link";
 import { IoArrowForward, IoMailOpenOutline, IoRocketOutline, IoSparklesOutline } from "react-icons/io5";
 import { getCurseForgeDownloadCount } from "../lib/curseforge";
 
-export const dynamic = "force-dynamic";
-
 type PortfolioBaseItem = {
   name: string;
   logo: string;

@@ -13,8 +13,7 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { href: "/team", label: "Team" },
-  { href: "https://solutions.kalalib.com", label: "KALA Solutions", external: true },
-  { href: "https://studio.kalalib.com", label: "KALA Studio", external: true },
+  { href: "https://wankunsystem.github.io", label: "Wankun System", external: true },
   { href: "/#contact", label: "Contact" },
 ];
 

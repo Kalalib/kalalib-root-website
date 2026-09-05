@@ -1,5 +1,23 @@
 import Link from "next/link";
 import { IoArrowForward, IoMailOpenOutline, IoRocketOutline, IoSparklesOutline } from "react-icons/io5";
+import { getCurseForgeDownloadCount } from "../lib/curseforge";
+
+export const dynamic = "force-dynamic";
+
+type PortfolioBaseItem = {
+  name: string;
+  logo: string;
+  stack: string;
+  result: string | ((downloads: number) => string);
+  tags: string[];
+  href?: string;
+  curseforgeSlug?: string;
+  curseforgeFallbackDownloads?: number;
+};
+
+type PortfolioItem = Omit<PortfolioBaseItem, "result"> & {
+  result: string;
+};
 
 const services = [
   {
@@ -22,7 +40,9 @@ const services = [
   },
 ];
 
-const portfolio = [
+const downloadFormatter = new Intl.NumberFormat("en-US");
+
+const portfolio: PortfolioBaseItem[] = [
   {
     name: "WellWiseSolutions",
     logo: "/assets/portfolio/wellwisesolutions_logo.png",
@@ -66,9 +86,12 @@ const portfolio = [
     name: "SpaceTech",
     logo: "/assets/portfolio/spacetech_logo.png",
     stack: "Minecraft modpack",
-    result: "Launched a themed modpack with 1929+ downloads on CurseForge.",
+    result: (downloads: number) =>
+      `Launched a themed modpack with ${downloadFormatter.format(downloads)} downloads on CurseForge.`,
     tags: ["Games", "Minecraft", "Modpack"],
     href: "https://www.curseforge.com/minecraft/modpacks/spacetech-space-capsule",
+    curseforgeSlug: "spacetech-space-capsule",
+    curseforgeFallbackDownloads: 2672,
   },
   {
     name: "AutoBB",
@@ -82,15 +105,32 @@ const portfolio = [
     name: "Advanced Rocketry - Skyblock Addon (Spaceblock)",
     logo: "/assets/portfolio/advanced_rocketry_skyblock_addon.png",
     stack: "Minecraft mod",
-    result: "Launched an addon mod with 448+ downloads on CurseForge for Advanced Rocketry.",
+    result: (downloads: number) =>
+      `Launched an addon mod with ${downloadFormatter.format(downloads)} downloads on CurseForge for Advanced Rocketry.`,
     tags: ["Games", "Minecraft", "Mod"],
     href: "https://www.curseforge.com/minecraft/mc-mods/advanced-rocketry-skyblock-addon-spaceblock",
+    curseforgeSlug: "advanced-rocketry-skyblock-addon-spaceblock",
+    curseforgeFallbackDownloads: 2320,
   },
 ];
 
-export default function Home() {
+export default async function Home() {
   const formAction = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "https://formspree.io/f/mjgpddyz";
   const thanksRedirect = `${process.env.NEXT_PUBLIC_SITE_URL || "https://kalalib.com"}/thanks/`;
+  const resolvedPortfolio: PortfolioItem[] = await Promise.all(
+    portfolio.map(async (item) => {
+      if (!item.curseforgeSlug || typeof item.result !== "function" || item.curseforgeFallbackDownloads === undefined) {
+        return item as PortfolioItem;
+      }
+
+      const downloads = await getCurseForgeDownloadCount(item.curseforgeSlug, item.curseforgeFallbackDownloads);
+
+      return {
+        ...item,
+        result: item.result(downloads),
+      } as PortfolioItem;
+    })
+  );
 
   return (
     <main>
@@ -160,7 +200,7 @@ export default function Home() {
           </h2>
         </div>
         <div className="grid gap-5 md:grid-cols-2">
-          {portfolio.map((item) => (
+          {resolvedPortfolio.map((item) => (
             <article
               key={item.name}
               className="card-surface flex h-full flex-col p-6 transition-all duration-300 hover:-translate-y-1 hover:border-kala-accent/40 hover:bg-gradient-to-tr hover:from-kala-accentSoft/60 hover:to-kala-secondarySoft/70 hover:shadow-[0_16px_42px_-22px_rgba(214,127,255,0.5)]"

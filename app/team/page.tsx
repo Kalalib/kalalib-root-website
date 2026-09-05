@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const members: TeamMember[] = [
   {
     name: "Kapakki Lo (Gameboy612)",
-    role: "Founder of KALALib, Lead Developer of KALA Solutions",
+    role: "Founder of KALALib, Lead Developer",
     summary:
       "Majored in Artificial Intelligence: Systems and Technologies at The Chinese University of Hong Kong. Works on web and AI projects bridging technology and healthcare.",
     highlights: [
@@ -50,10 +50,10 @@ const members: TeamMember[] = [
   },
   {
     name: "Andy Wong (DoubleA)",
-    role: "Co-founder of KALALib, Lead Developer of KALA Studios",
+    role: "Co-founder of KALALib, Lead Developer",
     summary:
       "Majored in Computer Engineering at The Hong Kong Polytechnic University and has delivered projects in game development and modding.",
-    highlights: ["Leads core engineering initiatives for KALA Studios.", "Focuses on creative technical execution."],
+    highlights: ["Leads core engineering initiatives.", "Focuses on creative technical execution."],
     websites: [
       {
         icon: "github",
@@ -64,12 +64,12 @@ const members: TeamMember[] = [
   },
   {
     name: "Felix Fong (Lavafox)",
-    role: "Co-founder of KALALib, Lead Graphic Designer of KALA Studios",
+    role: "Co-founder of KALALib, Lead Graphic Designer",
     summary:
       "Majored in Creative Media at City University of Hong Kong and has worked across game development and modding projects.",
     highlights: [
       "Active 3D designer building assets for Devas and related projects.",
-      "Supports visual direction for KALA Studio products.",
+      "Supports visual direction for KALALib products.",
     ],
     websites: [
       {

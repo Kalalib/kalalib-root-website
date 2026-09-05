@@ -31,10 +31,10 @@ const portfolio = [
     tags: ["Workflow Automation", "CRM"]
   },
   {
-    name: "Amazing Echo Solutions",
-    logo: "/assets/portfolio/amazing-echo.svg",
-    stack: "Website Development",
-    result: "Delivered web presence support for a medical-grade air purifier company in Hong Kong.",
+    name: "Wankun System",
+    logo: "/assets/portfolio/wankun-system.svg",
+    stack: "Environmental and Wellness Solutions",
+    result: "Built a multilingual web presence for Wankun System, a Hong Kong team focused on air and water purification, daily necessities agency, health case handling, and tailored support services.",
     tags: ["Website", "B2B"],
     href: "https://wankunsystem.github.io",
   },
@@ -69,6 +69,14 @@ const portfolio = [
     result: "Launched a themed modpack with 1929+ downloads on CurseForge.",
     tags: ["Games", "Minecraft", "Modpack"],
     href: "https://www.curseforge.com/minecraft/modpacks/spacetech-space-capsule",
+  },
+  {
+    name: "AutoBB",
+    logo: "/assets/portfolio/autobb_logo.png",
+    stack: "Chrome Extension",
+    result: "Built a one-click Blackboard downloader that helps students organize course content and save time.",
+    tags: ["Product", "Automation", "Education"],
+    href: "https://autobb.kalalib.com",
   },
   {
     name: "Advanced Rocketry - Skyblock Addon (Spaceblock)",
